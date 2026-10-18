@@ -4,32 +4,28 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    
-     color: #F5F5F5;
 }
 
 /* fundo principal */
 body {
-    background-color: #243447;   
+    background: linear-gradient(180deg, #141E30, #243447, #35577E);
+    color: #F5F5F5;
 }
 
 /* Posicionameento e aparencia do cabecalho */
-
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 15px;
-    background-color: #141E30;
+    background: linear-gradient(90deg, #101B2E, #234469, #101B2E);
     border-bottom: solid 2px #8FA9C4;
-
     position: sticky;
     top: 0;
     z-index: 10;
 }
-    
-/* Estilização dos elementos da navegação */
 
+/* Estilização dos elementos da navegação */
 li, ul, a {
     list-style: none;
     font-size: 18px;
@@ -37,44 +33,60 @@ li, ul, a {
 }
 
 /* estilizacao do nome CINEVERSE */
-
 .logo {
     font-size: 34px;
     font-weight: bold;
+    background: linear-gradient(
+        90deg,
+        #328BEF 0%,
+        #B7E8FF 40%,
+        #3672D0 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
-    
 
 .nav-links {
     list-style: none;
 }
 
 /* Organizacao e aparencia dos links */
-
-.nav-links li { 
+.nav-links li {
     display: inline-block;
-    padding: 0px 60px;
-    border: solid 1px #8FA9C4;
-    padding-block: 16px 16px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 16px 60px;
+    border: 1px solid #8FA9C4;
     border-radius: 6px;
+    color: #F5F5F5;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
+
 /* Hover ao passar o mouse nas opcoes da nav bar */
-
-.nav-links li:hover {
+.nav-links a:hover,
+.nav-links a:focus-visible {
     background-color: #344B63;
+    color: #91C9FF;
 }
-
 
 /* Apresentação dos filmes em destaque */
-
 .trailers {
     text-align: center;
     padding: 30px 20px;
-    
 }
 
 .trailers h1 {
-    margin-bottom: 12px;
-    font-size: 50px;
+    margin-bottom: 14px;
+    font-size: 44px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #F5F5F5, #C5E8FF, #75B9FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .trailers p {
@@ -87,6 +99,10 @@ li, ul, a {
     gap: 0.75rem;
     min-width: 0;
     text-align: center;
+    color: #C8DBEF;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .subtitulo-destaques::before,
@@ -98,13 +114,242 @@ li, ul, a {
     background-color: #8FA9C4;
 }
 
+/* Organizacao dos filmes/trailer */
+.lista-filmes {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 25px;
+    column-gap: 25px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+/* Aparência individual dos filmes */
+.filme {
+    width: min(400px, 100%);
+    padding: 10px;
+    background: linear-gradient(145deg, #263C58, #17263A);
+    border: 1px solid #527BA5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse nos filmes */
+.filme:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Títulos dos filmes */
+.filme h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #F5F5F5, #91C9FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* Aparência dos trailers */
+.filme iframe {
+    display: block;
+    width: 100%;
+    height: 195px;
+    border: none;
+    border-radius: 8px;
+}
+
+/* Rodapé e direitos autorais do CineVerse */
+footer {
+    background: linear-gradient(90deg, #101B2E, #234469, #101B2E);
+    border-top: 2px solid #8FA9C4;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Nome do projeto no rodapé */
+footer h2 {
+    font-size: 25px;
+    color: #91C9FF;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* Informações do rodapé */
+footer p {
+    font-size: 14px;
+    color: #C8DBEF;
+    line-height: 1.6;
+    margin-top: 6px;
+}
+
+/* Organização dos cards da página Sinopses */
+
+.grade-sinopses {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 35px;
+    column-gap: 40px;
+    max-width: 900px;
+    margin: 30px auto 0;
+}
+
+
+/* Padronização dos cartazes dos filmes */
+
+.card-sinopse img {
+    display: block;
+    width: 100%;
+    height: 380px;
+    object-fit: contain;
+    background-color: #17263A;
+    border-radius: 8px;
+}
+
+/* Aparência dos cards de sinopses */
+.card-sinopse {
+    padding: 18px;
+    background: linear-gradient(145deg, #263C58, #17263A);
+    border: 1px solid #527BA5;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 10px;
+    margin-top: 15px;
+    
+}
+
+
+.card-sinopse:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* Títulos dos filmes na página de sinopses */
+.card-sinopse h2 {
+    color: #F5F5F5;
+    font-size: 22px;
+    border-left: 4px solid #91C9FF;
+    padding-left: 10px;
+    margin: 15px 0 12px;
+}
+
+/* Identificação das sinopses */
+.card-sinopse span {
+    display: inline-block;
+    color: #91C9FF;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Texto das sinopses */
+.card-sinopse p {
+    color: #E0ECF8;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+
+/* Título principal da página de sinopses */
+.titulo-sinopse {
+ font-size: 39px;
+ text-align: center;
+ margin-top: 15px;
+ letter-spacing: 3px;
+ background: linear-gradient(90deg, #F5F5F5, #C5E8FF, #75B9FF);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+}
+
+/* Subtítulo da página de sinopses */
+.subtitulo-sinopse {
+font-size: 19.5px;
+ text-align: center;
+ word-spacing: 2px;
+ background: linear-gradient(90deg, #F5F5F5, #C5E8FF, #75B9FF);
+ -webkit-background-clip: text;
+ background-clip: text;
+ color: transparent;
+ margin-top: 9px;
+}
+
+.titulo-sinopse::after {
+    content: "";
+
+    display: block;
+    width: 140px;
+    height: 4px;
+    background: linear-gradient(90deg, #328BEF, #C5E8FF, #75B9FF);
+    margin: 10px auto 0;    
+}
+
+
+/* Título principal da página Sobre */
+.titulo-sobre {
+    text-align: center;
+    font-size: 39px;
+    letter-spacing: 2px;
+    color: #F5F5F5;
+    margin: 30px 15px 0;
+}
+
+/* Detalhe azul abaixo do título */
+.titulo-sobre::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, #328BEF, #C5E8FF, #75B9FF);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* Organização da página Sobre */
+.sobre-cineverse {
+    width: calc(100% - 40px);
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #223750;
+    border: 1px solid #527BA5;
+    border-radius: 12px;
+}
+
+/* Subtítulos da página Sobre */
+.sobre-cineverse h2 {
+    font-size: 24px;
+    color: #F5F5F5;
+    margin-bottom: 15px;
+}
+
+/* Textos da página Sobre */
+.sobre-cineverse p {
+    font-size: 17px;
+    color: #D7E4F3;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* Linhas divisórias entre os assuntos */
+.divisoria-sobre {
+    border: none;
+    height: 1px;
+    background-color: #527BA5;
+    margin: 30px 0;
+}
+
+
 /* Ajuste para telas menores */
-
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
         gap: 15px;
+        position: static;
     }
 
     .nav-links {
@@ -115,6 +360,39 @@ li, ul, a {
     }
 
     .nav-links li {
+        display: block;
+    }
+
+    .nav-links a {
         padding: 10px 16px;
     }
+
+    .trailers h1 {
+        font-size: 32px;
+    }
+
+    .filme iframe {
+        max-width: 100%;
+    }
+
+    .grade-sinopses {
+      grid-template-columns: 1fr;
+}
+    .titulo-sobre {
+    font-size: 30px;
+}
+
+   .sobre-cineverse {
+    width: calc(100% - 24px);
+    padding: 20px;
+}
+
+   .sobre-cineverse h2 {
+    font-size: 21px;
+}
+
+   .sobre-cineverse p {
+    font-size: 16px;
+    line-height: 1.7;
+}
 }
