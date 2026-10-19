@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contato | CineVerse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Nome do projeto e a navegação principal-->
+    <header>
+        <span class="logo">CINEVERSE</span>
+        <!-- Links de navegação para as páginas do site -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sinopse.html">Sinopses</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Conteúdo principal da página -->
+<main>
+    <!-- Formulario de Contato Funcional -->
+    
+    <form class="form-contact"
+          name="contato"
+          method="post"
+          data-netlify="true">
+
+          <input type="hidden" name="form-name" value="contato">
+    
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Insira seu nome" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="Insira seu email" required>
+
+        <label for="assunto">Assunto</label>
+        <select id="assunto" name="assunto" required>
+            <option value="" disabled selected>Selecione um assunto</option>
+            <option value="duvida">Dúvida</option>
+            <option value="sugestao">Sugestão</option>
+            <option value="outro">Outro</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem..."></textarea>
+         
+        <button class="btn-enviar" type="submit">Enviar</button>
+
+
+
+        <p id="status-envio" role="status" aria-live="polite"></p>
+
+    </form>
+
+</main>
+ <!-- Rodapé do site e informações de direitos autorais -->
+<footer>
+    <h2>CINEVERSE</h2>
+    <p>© 2026 CineVerse — Projeto IFSP.</p>
+    <p>Os trailers e materiais dos filmes pertencem aos seus respectivos titulares de direitos autorais.</p>
+</footer>
+
+  <!-- Conectando o arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>  

@@ -343,6 +343,73 @@ font-size: 19.5px;
     margin: 30px 0;
 }
 
+/* Organização, dimensionamento e aparência geral do formulário */
+
+.form-contact {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   max-width: 550px;
+   margin: 30px auto;
+   padding: 25px;
+   background-color: #223750;
+   border-radius: 12px;
+   width: 100%;
+
+}
+/* Aparencia e organizacao do textarea */
+.form-contact textarea {
+    field-sizing: content;
+    min-height: 90px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 10px;
+    padding: 10px 10px;
+    outline-color: #91C9FF;
+    border: 3px solid #527BA5;
+    background-color: #17263A;
+    color: #eaf6ff;
+}
+
+.form-contact textarea:focus-visible {
+    outline: 2px solid #91C9FF;
+    outline-offset: 2px;
+}
+/* Aparencia inputs e select*/
+
+.form-contact input, select {
+    border-radius: 10px;
+    padding: 10px;
+    color: #eaf6ff;
+    background-color: #17263A;
+    outline-color: #91C9FF;
+    border: 1px solid #527BA5;
+}
+
+.form-contact input:focus-visible {
+    outline: 2px solid #91C9FF;
+    outline-offset: 2px;
+}
+
+.form-contact label {
+    color: #EAF6FF;
+}
+/* Aparencia botao de enviar */
+
+.btn-enviar {
+   padding: 7px 10px;
+   margin-top: 3px;
+   border-radius: 20px;
+   cursor: pointer;
+   background-color: #328BEF;
+   color: #eaf6ff;
+   border: none;
+}
+
+.btn-enviar:hover {
+    outline: 2px solid #C5E8FF;
+    outline-offset: 3px;
+}    
 
 /* Ajuste para telas menores */
 @media (max-width: 768px) {
